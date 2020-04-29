@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book List</title>
+  </head>
+  <body>
+    <script>
+      // Zadatak - Niz Objekata
+      let knjiga1 = {
+        naziv: "1984",
+        autor: "Dzordz Orvel",
+        slika:
+          "https://images-na.ssl-images-amazon.com/images/I/81WunXo0giL.jpg",
+        procitana: true,
+      };
+
+      let knjiga2 = {
+        naziv: "Senka Vetra",
+        autor: "Karlos Ruiz Safon",
+        slika:
+          "https://images-eu.ssl-images-amazon.com/images/I/51tHdYcBomL.jpg",
+        procitana: true,
+      };
+
+      let knjiga3 = {
+        naziv: "Let Iznad Kukavicjeg Gnezda",
+        autor: "Ken Kizi",
+        slika:
+          "https://www.vulkani.rs/cached/www.vulkani.rs/Images/LET-IZNAD-KUKAVICJEG-GNEZDA0-1000x0-000074235137152.jpg",
+        procitana: false,
+      };
+
+      let knjiga4 = {
+        naziv: "Boja Purpura",
+        autor: "Alis Voker",
+        slika:
+          "https://www.laguna.rs/_img/korice/3814/boja_purpura-alis_voker_v.jpg",
+        procitana: true,
+      };
+
+      let knjiga5 = {
+        naziv: "Orlando",
+        autor: "Virdzinija Vulf",
+        slika: "https://www.delfi.rs/_img/artikli/2017/06/orlando_vv.jpg",
+        procitana: false,
+      };
+
+      let knjiga6 = {
+        naziv: "Kuca",
+        autor: "Kuca Kuca",
+        slika:
+          "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=660&q=80",
+        procitana: true,
+      };
+
+      let knjige = [knjiga1, knjiga2, knjiga3, knjiga4, knjiga5, knjiga6];
+      console.log(knjige);
+
+      // Zadatak - Tabela
+
+      let tabela = document.createElement("table");
+      document.body.appendChild(tabela);
+
+      // Tabela - Stilovi
+      tabela.style.border = "solid 15px gainsboro";
+      tabela.style.padding = "20px";
+      tabela.style.backgroundImage = "linear-gradient(gray, whitesmoke)";
+      tabela.style.margin = "50px auto";
+      document.body.style.fontFamily = "Oxanium, cursive";
+      document.body.style.backgroundImage =
+        "url(https://images.unsplash.com/photo-1525358180237-7399f908a1d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1057&q=80)";
+
+      knjige.forEach((k, i) => {
+        let tr = document.createElement("tr");
+        let td = document.createElement("td");
+        let td1 = document.createElement("td1");
+        tr.append(td, td1);
+        td.innerHTML = `<img width="210px" src="${knjige[i].slika}">`;
+        td1.innerHTML += `Naslov: ${knjige[i].naziv} <br> Autor Knjige: ${knjige[i].autor}`;
+        tabela.append(tr);
+        let procitaj = knjige[i].procitana;
+        // Procitana ili Ne
+        if (procitaj == false) {
+          td1.style.color = "dimgray";
+        } else if (procitaj == true) {
+          td1.style.color = "darkslateblue";
+        }
+        // Stilovi
+        td1.style.fontSize = "35px";
+        td.style.opacity = "0.9";
+      });
+    </script>
+  </body>
+</html>
